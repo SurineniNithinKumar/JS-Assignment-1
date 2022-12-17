@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        Create a simple application which displays two counts:Local Score, Session Score and a button to increment these counts. Local score must persist in Local Storage and Session score must persist in Session Storage and must reset on closing the session.
+
+Submit the github link with your code
+    -->
+   
+    <button onclick="clickButtonFunction()">Button</button>
+    <button onclick="resert()"> reset</button>
+    <p id="demo"></p>
+    <p id="dem"></p>
+    <script>
+        function clickButtonFunction(){
+            if (localStorage.Localscore) {
+                localStorage.Localscore = Number(localStorage.Localscore) + 1;
+            } else {
+                localStorage.Localscore = 0;
+            }
+            document.getElementById("demo").innerHTML = "local score is: "+localStorage.Localscore;
+            if (sessionStorage.sessionscore) {
+                sessionStorage.sessionscore= parseInt(sessionStorage.sessionscore) + 1;
+            } else {
+                sessionStorage.sessionscore = 0;
+            }
+            document.getElementById("dem").innerHTML = "session score is: "+sessionStorage.sessionscore;
+            
+        }
+      function resert(){
+            localStorage.clear();
+            sessionStorage.clear();
+            if (localStorage.Localscore) {
+                localStorage.Localscore = Number(localStorage.Localscore) + 1;
+            } else {
+                localStorage.Localscore = 0;
+            }
+            document.getElementById("demo").innerHTML = "local score is: "+localStorage.Localscore;
+            if (sessionStorage.sessionscore) {
+                sessionStorage.sessionscore= parseInt(sessionStorage.sessionscore) + 1;
+            } else {
+                sessionStorage.sessionscore = 0;
+            }
+            document.getElementById("dem").innerHTML = "session score is: "+sessionStorage.sessionscore;
+            
+        }
+      
+    </script>
+</body>
+
+</html>
